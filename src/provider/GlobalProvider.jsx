@@ -7,14 +7,11 @@ export const GlobalContext = createContext();
 export const GlobalProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const apiKey = import.meta.env.VITE_RUBBLE_API_KEY;
+  // const apiKey = import.meta.env.VITE_RUBBLE_API_KEY;
 
   useEffect(() => {
-
     axios
-      .get(
-        `https://rubble-api-ai3c.vercel.app/${apiKey}`
-      )
+      .get(`https://loquacious-panda-0c8fd5.netlify.app/api/data.json`)
 
       .then(function (response) {
         if (response.status !== 200) {
@@ -27,11 +24,11 @@ export const GlobalProvider = ({ children }) => {
           setData(response.data);
           setLoading(false);
         }, 2000);
-      })
-      .catch(function (error) {
-        // console.error("Error fetching data:", error);
-        setLoading(false);
       });
+    // .catch(function (error) {
+    //   // console.error("Error fetching data:", error);
+    //   setLoading(false);
+    // });
   }, []);
 
   return (
