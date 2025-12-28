@@ -11,7 +11,7 @@ export const GlobalProvider = ({ children }) => {
 
   useEffect(() => {
     axios
-      .get(`https://loquacious-panda-0c8fd5.netlify.app/api/content.json`)
+      .get(`https://key-liard.vercel.app/content.json`)
 
       .then(function (response) {
         if (response.status !== 200) {
