@@ -11,7 +11,7 @@ export const GlobalProvider = ({ children }) => {
 
   useEffect(() => {
     axios
-      .get(`https://loquacious-panda-0c8fd5.netlify.app/api/data.json`)
+      .get(`https://loquacious-panda-0c8fd5.netlify.app/api/content.json`)
 
       .then(function (response) {
         if (response.status !== 200) {
